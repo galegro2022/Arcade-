@@ -1,5 +1,5 @@
 {
-    "name": "Quarter_Arcade",
+    "name": "quarter-arcade",
     "version": "1.0.0",
     "description": "Description of our website.",
     "main": "server.js",
