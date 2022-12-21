@@ -1,0 +1,25 @@
+{
+    "name": "Quarter_Arcade",
+    "version": "1.0.0",
+    "description": "Description of our website.",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+      "watch": "nodemon server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.16.3",
+      "express-handlebars": "^5.2.0",
+      "express-session": "^1.16.1",
+      "moment": "^2.27.0",
+      "mysql": "^2.18.1",
+      "mysql2": "^1.6.4",
+      "passport": "^0.4.1",
+      "passport-local": "^1.0.0",
+      "sequelize": "^6.3.5"
+    }
+  }
