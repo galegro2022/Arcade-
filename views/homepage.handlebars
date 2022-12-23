@@ -26,6 +26,105 @@
 
         </div>
 
+        {{/if}}
+        {{/each}}
+
+        <div class="row" id="saved-games-container">
+	    {{#each games}}
+            {{#if this.saved-games}}
+		    
+	
+		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
+        	<div class="box gallery">
+				<div class="card">
+    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
+    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
+						<div class="info">
+      		        		<div class="foot">
+								<p class="game-title">{{this.game_name}}</p>
+                                </div>
+     		    		</div>
+     	    	</div>
+        	</div>
+		</div>
+
+        </div>
+
+        {{/if}}
+        {{/each}}
+
+        <div class="row" id="rpg-games-container">
+	    {{#each games}}
+            {{#if this.rpg}}
+		    
+	
+		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
+        	<div class="box gallery">
+				<div class="card">
+    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
+    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
+						<div class="info">
+      		        		<div class="foot">
+								<p class="game-title">{{this.game_name}}</p>
+                                </div>
+     		    		</div>
+     	    	</div>
+        	</div>
+		</div>
+
+        </div>
+
+        {{/if}}
+        {{/each}}
+
+        <div class="row" id="fps-games-container">
+	    {{#each games}}
+            {{#if this.fps}}
+		    
+	
+		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
+        	<div class="box gallery">
+				<div class="card">
+    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
+    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
+						<div class="info">
+      		        		<div class="foot">
+								<p class="game-title">{{this.game_name}}</p>
+                                </div>
+     		    		</div>
+     	    	</div>
+        	</div>
+		</div>
+
+        </div>
+
+        {{/if}}
+        {{/each}}
+
+        <div class="row" id="sports-games-container">
+	    {{#each games}}
+            {{#if this.sports}}
+		    
+	
+		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
+        	<div class="box gallery">
+				<div class="card">
+    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
+    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
+						<div class="info">
+      		        		<div class="foot">
+								<p class="game-title">{{this.game_name}}</p>
+                                </div>
+     		    		</div>
+     	    	</div>
+        	</div>
+		</div>
+
+        </div>
+
+        {{/if}}
+        {{/each}}
+
         <!-- game details modal -->
         <div id="myModal{{@index}}" class="modal">
 
@@ -43,17 +142,17 @@
 						<span id='closeit{{@index}}' class="close">&times;</span>
 						
 						<div class="container" id="modal-game-info-box">
-							<!--Movie Title -->
-							<h2 class="game-title" id="modal-game-title">{{this.movie_name}}</h2>
+							<!--Game Title -->
+							<h2 class="game-title" id="modal-game-title">{{this.game_name}}</h2>
 							<!--Year & Genre -->
 							<div class="row" id="YRG-box">
-								<div class="col-2" id="year"><h5>{{this.movie_year}}</h5></div>
-								<div class="col-6" id="genre"><h5>{{this.movie_genre}}</h5></div>
+								<div class="col-2" id="year"><h5>{{this.game_year}}</h5></div>
+								<div class="col-6" id="genre"><h5>{{this.game_genre}}</h5></div>
 							</div>
 							<!--Description -->
 							<div class="row">
 								<div class="col-10" id="plot">	
-									<p><strong>Plot: </strong>{{this.movie_description}}</p>
+									<p><strong>Plot: </strong>{{this.game_description}}</p>
 								</div>
 							</div>
 							<!--saved game BTN -->
@@ -64,23 +163,6 @@
 									<button type="submit"><img id="saved-game-button" src=""></button>
 								</form>
 								</div>
-
-      
-        <div class="row">
-          <div class="col">
-            <h3>Categories</h3>
-            <ul id="categories"></ul>
-          </div>
-          <div class="col">
-            <h3>Games in the category</h3>
-            <div id="gamesInCategory">
-              <div class="card-columns" id="gameCards">
-                <!-- Card -->
-                <!-- /Card -->
-              </div>
-            </div>
-          </div>
-        </div>   
 
     </main>
 
