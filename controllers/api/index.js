@@ -18,11 +18,10 @@ const Search = () => {
         let slug = searchTerm.split(' ').join('-').toLowerCase()
 
         setGameResults([])
-        fetch('https://api.rawg.io/api/games?key=e1819ed11785467faf43536ee5a1224a&search=${slug}`);
+        fetch('https://api.rawg.io/api/games?key=e1819ed11785467faf43536ee5a1224a&search=${slug}')
         .then(resp => resp.json())
         .then(({results}) => {
             results === undefined ? alert('no games found!') : setGameResults(results);
         })
     setSearchTerm("")
-}
-
+}}
