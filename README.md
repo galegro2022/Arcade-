@@ -32,11 +32,11 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-John Grant:https://github.com/jgrant928
-Austin Stamps: https://github.com/AKstamps
-Zain Khawaja: https://github.com/ZainKhawaja98
-Shawn Thomas: https://github.com/LightintheBulb
-Alegro Godley: https://github.com/Galegro2022
+John Grant:https://github.com/jgrant928<br>
+Austin Stamps: https://github.com/AKstamps<br>
+Zain Khawaja: https://github.com/ZainKhawaja98<br>
+Shawn Thomas: https://github.com/LightintheBulb<br>
+Alegro Godley: https://github.com/Galegro2022<br>
 
 
 ## License
