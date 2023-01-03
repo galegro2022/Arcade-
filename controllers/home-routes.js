@@ -5,30 +5,41 @@ const withAuth = require('../utils/auth');
 // TODO: Add a comment describing the functionality of the withAuth middleware
 router.get('/',  async (req, res) => {
   try {
-    const userData = await Games.findAll({
+    const gameData = await Games.findAll({
       
     });
+    console.log(gameData)
 
-    const users = userData.map((project) => project.get({ plain: true }));
-
+    const games = gameData.map((game) => game.get({ plain: true }));
+    console.log(games)
     res.render('homepage', {
-      users,
+      games,
       // TODO: Add a comment describing the functionality of this property
-      logged_in: req.session.logged_in,
+      // logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
   // TODO: Add a comment describing the functionality of this if statement
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
+  // if (req.session.logged_in) {
+  //   res.redirect('/');
+  //   return;
+  // }
+    const userData = await User.findAll({
+      attributes: ["name", "email"],
+      where: {
+        name
+      }
+    })
+    console.log(userData)
+    const users = userData.map(user => user.get({plain: true}))
+  console.log(users)
+  res.render('login-signup', {
+    users
+  });
 });
 
 module.exports = router;

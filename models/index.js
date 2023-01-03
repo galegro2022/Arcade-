@@ -1,5 +1,6 @@
-const User = require('./User');
-const Games = require('./games')
+const User = require('./user.js');
+const Games = require('./games.js')
+
 module.exports = { User,Games };
 
 
