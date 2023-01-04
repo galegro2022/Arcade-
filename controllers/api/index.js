@@ -1,4 +1,4 @@
-const apiKey = `e1819ed11785467faf43536ee5a1224a`;
+const apiKey = e1819ed11785467faf43536ee5a1224a;
 
 // basic game search cadence
 
@@ -25,3 +25,36 @@ const apiKey = `e1819ed11785467faf43536ee5a1224a`;
 //         })
 //     setSearchTerm("")
 // }}
+
+var userSearch = "";
+
+getGames = function() {
+fetch('https://api.rawg.io/api/games?search=${userSearch}&key=${apiKey}')
+.then(resp => resp.json())
+.then(data => console.log(data))
+.then(error => console.error("Error: " + error))
+}
+
+const gameImage = getGames.data.results[0].background_image;
+
+const gameRating = getGames.data.results[0].esrb_rating;
+
+const gameReleaseDate = getGames.data.results[0].released;
+
+const platforms = getGames.data.results[0].parent_platforms;
+
+// get games in same series as search
+
+seriesGames = function() {
+    fetch('https://api.rawg.io/api/games/${userSearch}/game-series&key=${apiKey}')
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+    .then(error => console.error("Error: " + error))
+}
+
+const gamesInSeries = seriesGames.data.results;
+
+
+
+
+
