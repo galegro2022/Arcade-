@@ -5,19 +5,46 @@ class Game extends Model {}
 
 
 Game.init( {
-        title: DataTypes.STRING,
-        genre: DataTypes.STRING,
-        created_by: DataTypes.STRING,
-        release_date: DataTypes.DATE,
-        rating: DataTypes.STRING,
-        description: DataTypes.TEXT,
-        image: DataTypes.STRING
+
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+        title:{
+            type: DataTypes.STRING,
+            allowNull:false
+         },
+        genre:{ type:DataTypes.STRING,
+                allowNull:false
+        },
+        created_by:{ type:DataTypes.STRING,
+                     allowNull:false
+        },
+        release_date:{ type:DataTypes.DATE,
+                        allowNull:false
+        },
+        rating:{ type:DataTypes.STRING,
+                   allowNull:true
+        },
+        description:{ type:DataTypes.TEXT,
+                      allowNull:true
+        },
+        image:{ type:DataTypes.STRING,
+                      allowNull:false
+        },
+    },
+    { 
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'game',
+
     });
 
-Game.associate = function(models) {
-    Game.belongsTo(models.User, {
-        foreignKey: 'user_id'
-    });
-};
+
+
 
 module.exports = Game;
