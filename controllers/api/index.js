@@ -56,5 +56,16 @@ const gamesInSeries = seriesGames.data.results;
 
 
 
+gameStores = function() {
+    fetch('https://api.rawg.io/api/games/${userSearch}/stores')
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+    .then(error => console.error("Error: " + error))
+}
+
+availableStores = gameStores.data.results;
+
+
+
 
 
