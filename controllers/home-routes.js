@@ -31,7 +31,7 @@ router.get('/login', async (req, res) => {
     const userData = await User.findAll({
       attributes: ["name", "email"],
       where: {
-        name
+        name:name
       }
     })
     console.log(userData)
