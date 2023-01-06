@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS arcade_db;
+-- DROP DATABASE IF EXISTS arcade_db;
 CREATE DATABASE arcade_db;

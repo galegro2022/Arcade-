@@ -1,4 +1,12 @@
-const apiKey = e1819ed11785467faf43536ee5a1224a;
+const router = require('express').Router();
+
+const userRoutes = require('./user-routes');
+
+router.use('/users', userRoutes);
+
+module.exports = router;
+
+// const apiKey = e1819ed11785467faf43536ee5a1224a;
 
 // basic game search cadence
 
@@ -26,44 +34,44 @@ const apiKey = e1819ed11785467faf43536ee5a1224a;
 //     setSearchTerm("")
 // }}
 
-var userSearch = "";
+// var userSearch = "";
 
-getGames = function() {
-fetch('https://api.rawg.io/api/games?search=${userSearch}&key=${apiKey}')
-.then(resp => resp.json())
-.then(data => console.log(data))
-.then(error => console.error("Error: " + error))
-}
+// getGames = function() {
+// fetch('https://api.rawg.io/api/games?search=${userSearch}&key=${apiKey}')
+// .then(resp => resp.json())
+// .then(data => console.log(data))
+// .then(error => console.error("Error: " + error))
+// }
 
-const gameImage = getGames.data.results[0].background_image;
+// const gameImage = getGames.data.results[0].background_image;
 
-const gameRating = getGames.data.results[0].esrb_rating;
+// const gameRating = getGames.data.results[0].esrb_rating;
 
-const gameReleaseDate = getGames.data.results[0].released;
+// const gameReleaseDate = getGames.data.results[0].released;
 
-const platforms = getGames.data.results[0].parent_platforms;
+// const platforms = getGames.data.results[0].parent_platforms;
 
-// get games in same series as search
+// // get games in same series as search
 
-seriesGames = function() {
-    fetch('https://api.rawg.io/api/games/${userSearch}/game-series&key=${apiKey}')
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-    .then(error => console.error("Error: " + error))
-}
+// seriesGames = function() {
+//     fetch('https://api.rawg.io/api/games/${userSearch}/game-series&key=${apiKey}')
+//     .then(resp => resp.json())
+//     .then(data => console.log(data))
+//     .then(error => console.error("Error: " + error))
+// }
 
-const gamesInSeries = seriesGames.data.results;
+// const gamesInSeries = seriesGames.data.results;
 
 
 
-gameStores = function() {
-    fetch('https://api.rawg.io/api/games/${userSearch}/stores')
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-    .then(error => console.error("Error: " + error))
-}
+// gameStores = function() {
+//     fetch('https://api.rawg.io/api/games/${userSearch}/stores')
+//     .then(resp => resp.json())
+//     .then(data => console.log(data))
+//     .then(error => console.error("Error: " + error))
+// }
 
-availableStores = gameStores.data.results;
+// availableStores = gameStores.data.results;
 
 
 
