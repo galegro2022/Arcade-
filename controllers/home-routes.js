@@ -32,6 +32,16 @@ router.get('/login-signup', async (req, res) => {
   res.render('login-signup');
 });
 
+
+router.get('/homepage', async (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login-signup');
+});
+
 //     const userData = await User.findAll({
 //       attributes: ["name", "email"],
 //       where: {
