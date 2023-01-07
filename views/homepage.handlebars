@@ -1,4 +1,12 @@
     <main>
+{{!-- Welcome by name --}}
+
+<div>
+    {{#each users}}
+  <h1> Welcome {{name}}</h1>
+    {{/each}}
+  </div>
+
 <h1>Games</h1>
    <!--title -->
 
@@ -28,101 +36,7 @@
         {{/if}}
         {{/each}}
 
-        <div class="row" id="saved-games-container">
-	    {{#each games}}
-            {{#if this.saved-games}}
-		    
-	
-		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
-        	<div class="box gallery">
-				<div class="card">
-    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
-    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
-						<div class="info">
-      		        		<div class="foot">
-								<p class="game-title">{{this.game_name}}</p>
-                                </div>
-     		    		</div>
-     	    	</div>
-        	</div>
-		</div>
-
         </div>
-
-        {{/if}}
-        {{/each}}
-
-        <div class="row" id="rpg-games-container">
-	    {{#each games}}
-            {{#if this.rpg}}
-		    
-	
-		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
-        	<div class="box gallery">
-				<div class="card">
-    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
-    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
-						<div class="info">
-      		        		<div class="foot">
-								<p class="game-title">{{this.game_name}}</p>
-                                </div>
-     		    		</div>
-     	    	</div>
-        	</div>
-		</div>
-
-        </div>
-
-        {{/if}}
-        {{/each}}
-
-        <div class="row" id="fps-games-container">
-	    {{#each games}}
-            {{#if this.fps}}
-		    
-	
-		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
-        	<div class="box gallery">
-				<div class="card">
-    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
-    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
-						<div class="info">
-      		        		<div class="foot">
-								<p class="game-title">{{this.game_name}}</p>
-                                </div>
-     		    		</div>
-     	    	</div>
-        	</div>
-		</div>
-
-        </div>
-
-        {{/if}}
-        {{/each}}
-
-        <div class="row" id="sports-games-container">
-	    {{#each games}}
-            {{#if this.fps}}
-		    
-	
-		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
-        	<div class="box gallery">
-				<div class="card">
-    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
-    				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
-						<div class="info">
-      		        		<div class="foot">
-								<p class="game-title">{{this.game_name}}</p>
-                                </div>
-     		    		</div>
-     	    	</div>
-        	</div>
-		</div>
-
-        </div>
-
-        {{/if}}
-        {{/each}}
 
         <!-- game details modal -->
         <div id="myModal{{@index}}" class="modal">
