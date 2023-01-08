@@ -6,17 +6,14 @@ apiKey = 'e1819ed11785467faf43536ee5a1224a'
 
 var userSearch = document.querySelector("#search-button")
 userSearch.addEventListener('click', function() {
-    var userSearch = document.querySelector("#search-bar")
-    var gameName = userSearch.value
+    var searchText = document.querySelector("#search-bar")
+    var gameName = searchText.value.split(' ').join('-').toLowerCase()
     getGames(gameName)
 })
 
 
-
-
-
-getGames = function() {
-fetch(`https://api.rawg.io/api/games?search=${userSearch}&key=${apiKey}`)
+getGames = function(gameName) {
+fetch(`https://api.rawg.io/api/games?search=${gameName}&key=${apiKey}`)
 .then(resp => resp.json())
 .then(data => console.log(data))
 .then(error => console.error("Error: " + error))
