@@ -13,43 +13,61 @@ userSearch.addEventListener('click', function() {
 
 
 getGames = function(gameName) {
-fetch(`https://api.rawg.io/api/games?search=${gameName}&key=${apiKey}`)
+fetch(`https://api.rawg.io/api/games?search=${gameName}/&key=${apiKey}`)
 .then(resp => resp.json())
 .then(data => console.log(data))
 .then(error => console.error("Error: " + error))
 };
 
+searchText["gameName"] = getGames.data.results[0].name;
 
+searchText["gameImage"] = getGames.data.results[0].background_image;
 
-userSearch["gameImage"] = getGames.data.results[0].background_image;
+searchText["gameRating"] = getGames.data.results[0].esrb_rating;
 
-userSearch["gameRating"] = getGames.data.results[0].esrb_rating;
+searchText["gameReleaseDate"] = getGames.data.results[0].released;
 
-userSearch["gameReleaseDate"] = getGames.data.results[0].released;
+searchText["platforms"] = getGames.data.results[0].parent_platforms;
 
-userSearch["platforms"] = getGames.data.results[0].parent_platforms;
-
-// get games in same series as search
-
-seriesGames = function() {
-    fetch(`https://api.rawg.io/api/games/${userSearch}/game-series&key=${apiKey}`)
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-    .then(error => console.error("Error: " + error))
+function renderGameCard(gameName, gameImage, gameRating, gameReleaseDate, platforms) {
+    var gameCard = document.createElement("div");
+    gameCard.classList.add("card");
+    gameCard.innerHTML = `
+    <div class="card">
+        <img src="${gameImage}" alt="game image">
+        <h3>${gameName}</h3>
+        <p>Rating: ${gameRating}</p>
+        <p>Release Date: ${gameReleaseDate}</p>
+        <p>Platforms: ${platforms}</p>
+        <button id="saveBtn" class="btn btn-danger" type="button">save</button>
+    </div>
+    `
+    document.querySelector("#search-results").appendChild(gameCard);
 }
 
-const gamesInSeries = seriesGames.data.results;
+renderGameCard(searchText["gameName"], searchText["gameImage"], searchText["gameRating"], searchText["gameReleaseDate"], searchText["platforms"]);
+
+// // get games in same series as search
+
+// seriesGames = function() {
+//     fetch(`https://api.rawg.io/api/games/${userSearch}/game-series&key=${apiKey}`)
+//     .then(resp => resp.json())
+//     .then(data => console.log(data))
+//     .then(error => console.error("Error: " + error))
+// }
+
+// const gamesInSeries = seriesGames.data.results;
 
 
 
-gameStores = function() {
-    fetch(`https://api.rawg.io/api/games/${userSearch}/stores`)
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-    .then(error => console.error("Error: " + error))
-}
+// gameStores = function() {
+//     fetch(`https://api.rawg.io/api/games/${userSearch}/stores`)
+//     .then(resp => resp.json())
+//     .then(data => console.log(data))
+//     .then(error => console.error("Error: " + error))
+// }
 
-availableStores = gameStores.data.results;
+// availableStores = gameStores.data.results;
 
 
 

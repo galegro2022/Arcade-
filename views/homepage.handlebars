@@ -23,13 +23,13 @@
 </div>
 </div>
 
-<div id="search-results"></div>
+{{!-- <div id="search-results"></div>
 
-<h2 class="text-center display-3 text-danger fw-bold">Your games</h2>
+<h2 class="text-center display-3 text-danger fw-bold">Your games</h2> --}}
    <!--title -->
 
          <!--saved games box -->
-
+{{!-- 
         <div class="row" id="saved-games-container">
 	    {{#each games}}
             {{#if this.saved-games}}
@@ -38,11 +38,11 @@
 		<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" id="game-box">
         	<div class="box gallery">
 				<div class="card">
-    				<img class="img-responsive" id="saved-games" src={{this.game_image}}>
+    				<img class="img-responsive" id="saved-games" src={{this.gameImage}}>
     				<a onClick="modalDisplay({{@index}})" href="#" class="overlay link" id="trigger-modal{{@index}}"></a>
 						<div class="info">
       		        		<div class="foot">
-								<p class="game-title">{{this.game_name}}</p>
+								<p class="game-title">{{this.gameName}}</p>
                                 </div>
      		    		</div>
      	    	</div>
@@ -93,7 +93,7 @@
 									<input type="hidden" name="saved" value="true">
 									<button type="submit"><img id="saved-game-button" src=""></button>
 								</form>
-								</div>
+								</div> --}}
 
     </main>
 
