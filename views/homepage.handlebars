@@ -1,14 +1,23 @@
     <main>
+
+ <body class="p-3 mb-2 bg-dark text-white">
+
 {{!-- Welcome by name --}}
 
 <div>
     {{#each users}}
-  <h1> Welcome {{name}}</h1>
+  <h1 class="display-3 text-danger fw-bold"> Welcome {{name}}</h1>
     {{/each}}
   </div>
 
+<div class="text-center">
+  <div>
+  <h2 class="display-2 text-danger fw-bold">Search for a Game</h2>
+  </div>
+</div>
+
 <div>
-	<div class="input-group">
+	<div class="input-group card p-3 mb-2 bg-dark text-white">
   <input id="search-bar" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
   <button id="search-button" type="submit" class="btn btn-outline-danger">search</button>
 </div>
@@ -16,7 +25,7 @@
 
 <div id="search-results"></div>
 
-<h1>Games</h1>
+<h2 class="display-2 text-danger fw-bold">Your games</h2>
    <!--title -->
 
          <!--saved games box -->
@@ -56,7 +65,7 @@
     		<div class="row" id="modal-body">
       			<!--cover image -->
 					<div class="col-5" id="search-game">
-						<img id="selected-game-cover" src={{this.game_image}}>
+						<img id="selected-game-cover" src={{this.gameImage}}>
 					</div>
 
 					<div class="col-7" id="game-scroll">
@@ -65,16 +74,16 @@
 						
 						<div class="container" id="modal-game-info-box">
 							<!--Game Title -->
-							<h2 class="game-title" id="modal-game-title">{{this.game_name}}</h2>
+							<h2 class="game-title" id="modal-game-title">{{this.gameName}}</h2>
 							<!--Year & Genre -->
 							<div class="row" id="YRG-box">
-								<div class="col-2" id="year"><h5>{{this.game_year}}</h5></div>
-								<div class="col-6" id="genre"><h5>{{this.game_genre}}</h5></div>
+								<div class="col-2" id="release-date"><h5>{{this.gameReleaseDate}}</h5></div>
+								<div class="col-6" id="rating"><h5>{{this.gameRating}}</h5></div>
 							</div>
 							<!--Description -->
 							<div class="row">
 								<div class="col-10" id="plot">	
-									<p><strong>Plot: </strong>{{this.game_description}}</p>
+									<p><strong>Platforms: </strong>{{this.gamePlatforms}}</p>
 								</div>
 							</div>
 							<!--saved game BTN -->
