@@ -1,5 +1,6 @@
 const logoutFormHandler = async () => {
-    const response = await fetch('/api/users/logout', {
+  console.log(logoutFormHandler)
+    const response = await fetch('/api/users/login-signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
