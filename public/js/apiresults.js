@@ -15,19 +15,23 @@ userSearch.addEventListener('click', function() {
 getGames = function(gameName) {
 fetch(`https://api.rawg.io/api/games?search=${gameName}/&key=${apiKey}`)
 .then(resp => resp.json())
-.then(data => console.log(data))
+.then(data => ((renderGameCard(data.results[0].name, data.results[0].background_image, data.results[0].esrb_rating, data.results[0].released, data.results[0].parent_platforms))))
 .then(error => console.error("Error: " + error))
 };
 
-searchText["gameName"] = getGames.data.results[0].name;
+// put render gamecard inside function
+// use catch instead of error
+// data goes into render gamecard
 
-searchText["gameImage"] = getGames.data.results[0].background_image;
+// searchText["gameName"] = getGames.data.results[0].name;
 
-searchText["gameRating"] = getGames.data.results[0].esrb_rating;
+// searchText["gameImage"] = getGames.data.results[0].background_image;
 
-searchText["gameReleaseDate"] = getGames.data.results[0].released;
+// searchText["gameRating"] = getGames.data.results[0].esrb_rating;
 
-searchText["platforms"] = getGames.data.results[0].parent_platforms;
+// searchText["gameReleaseDate"] = getGames.data.results[0].released;
+
+// searchText["platforms"] = getGames.data.results[0].parent_platforms;
 
 function renderGameCard(gameName, gameImage, gameRating, gameReleaseDate, platforms) {
     var gameCard = document.createElement("div");
@@ -45,7 +49,7 @@ function renderGameCard(gameName, gameImage, gameRating, gameReleaseDate, platfo
     document.querySelector("#search-results").appendChild(gameCard);
 }
 
-renderGameCard(searchText["gameName"], searchText["gameImage"], searchText["gameRating"], searchText["gameReleaseDate"], searchText["platforms"]);
+// renderGameCard(searchText["gameName"], searchText["gameImage"], searchText["gameRating"], searchText["gameReleaseDate"], searchText["platforms"]);
 
 // // get games in same series as search
 
