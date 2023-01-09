@@ -15,7 +15,7 @@ userSearch.addEventListener('click', function() {
 getGames = function(gameName) {
 fetch(`https://api.rawg.io/api/games?search=${gameName}/&key=${apiKey}`)
 .then(resp => resp.json())
-.then(data => ((renderGameCard(data.results[0].name, data.results[0].background_image, data.results[0].esrb_rating, data.results[0].released, data.results[0].parent_platforms))))
+.then(data => ((renderGameCard(data.results[0].name, data.results[0].background_image, data.results[0].esrb_rating.name, data.results[0].released, data.results[0].parent_platforms[0][name])), console.log(data.results[0])))
 .catch(error => console.error("Error: " + error))
 };
 
@@ -37,10 +37,11 @@ function renderGameCard(gameName, gameImage, gameRating, gameReleaseDate, platfo
     var gameCard = document.createElement("div");
     gameCard.classList.add("card");
     gameCard.classList.add("text-dark");
+    gameCard.style.width = "60rem";
     gameCard.innerHTML = `
-    <div class="card">
+    <div class="card" style="width: 60rem;">
         <img src="${gameImage}" alt="game image">
-        <h3>${gameName}</h3>
+        <h3 class="display-6">${gameName}</h3>
         <p>Rating: ${gameRating}</p>
         <p>Release Date: ${gameReleaseDate}</p>
         <p>Platforms: ${platforms}</p>
