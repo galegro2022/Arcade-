@@ -1,35 +1,50 @@
 # Project-2-quarter-arcade
 
-## Description
-
-Welcome to Quarter Arcade! This is a full-stack application that lets you search for games and save them for later so you can purchase them from a retailer. We wanted to make a website that makes it easier to learn about games from different genres that a user may be interested in since there are thousands of games and it can be difficult to find something to play. Some things we learned how to do were deploy an application to heroku, retrieve data through GET and POST routes, and use MYSQL for the database.
-
-
 ## Table of Contents
 
+- [Description](#description)
+- [Technologies Used](#technologiesused)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
 
+
+## Description
+
+Welcome to Quarter Arcade! This is a full-stack application that lets you search for games that you are interested in so you can purchase them from a retailer. We wanted to make a website that makes it easier to learn about games a user may be interested in since there are thousands of games and it can be difficult to find something to play. Some things we learned how to do were deploy an application to heroku, retrieve data through GET and POST routes, and use MYSQL for the database.
+
+
+## Technologies Used
+
+HTML <br>
+CSS <br>
+Javascript <br>
+Heroku <br>
+Node.js <br>
+Express.js <br>
+Handlebars.js <br>
+MySQL <br>
+
+
 ## Installation
 
-To install this program, clone this repo to your device.
-Open the .env file and type your username and password for the variable DB_USER and DB_PASSWORD
-Open your command line within the repo and run mysql -u root -p and type in your password
-Run source schema.sql and then exit mysql
-Go to node .\seeds\seed.js
-Type npm i and then npm start to get the application listening on localhost
-In the browser url type localhost:3001
+To install this program, clone this repo to your device <br>
+Open the .env file and type your username and password for the variable DB_USER and DB_PASSWORD <br>
+Open your command line within the repo and run mysql -u root -p and type in your password <br>
+Run source schema.sql and then exit mysql <br>
+Go to node .\seeds\seed.js <br>
+Type npm i and then npm start to get the application listening on localhost <br>
+In the browser url type localhost:3001 <br>
 
 
 ## Usage
 
-Create an account under the sign up section or log in if you already have an account. Type in the name of a game to see related titles and save those titles so they go to your shopping cart so they can be viewed later.
+Create an account under the sign up section or log in if you already have an account. Type in the name of a game to display a banner along with the release date, platforms, and maturity rating.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
-![alt text](assets/images/screenshot.png)
+![alt text](public/images/WebsiteHome.png)
+
 
 ## Credits
 
