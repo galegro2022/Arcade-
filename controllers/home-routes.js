@@ -16,7 +16,7 @@ router.get('/', withAuth, async (req, res) => {
       games,
       // TODO: Add a comment describing the functionality of this property
       logged_in: req.session.logged_in,
-      name: Gamer
+      user: req.body.username,
     });
   } catch (err) {
     res.status(500).json(err);
