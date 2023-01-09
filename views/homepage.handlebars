@@ -4,10 +4,13 @@
 
 {{!-- Welcome by name --}}
 
+<div class="float-end">
+<button id="logout-button" class="btn btn-danger" type="submit">Logout</button>	
+</div>
+
+
 <div>
-    {{#each users}}
   <h1 class="display-3 text-danger fw-bold"> Welcome {{name}}</h1>
-    {{/each}}
   </div>
 
 <div class="text-center">
@@ -23,9 +26,15 @@
 </div>
 </div>
 
-{{!-- <div id="search-results"></div>
+<div id="search-results"></div>
 
-<h2 class="text-center display-3 text-danger fw-bold">Your games</h2> --}}
+<br>
+
+<div class="d-flex justify-content-center">
+<button id="clearBtn" class="btn btn-danger" type="button">Clear</button>
+</div>
+
+{{!-- <h2 class="text-center display-3 text-danger fw-bold">Your games</h2> --}}
    <!--title -->
 
          <!--saved games box -->
