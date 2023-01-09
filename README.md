@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to Quarter Arcade! This is a full-stack application that lets you search for games and save them for later so you can purchase them from a retailer. We wanted to make a website that makes it easier to learn about games from different genres that a user may be interested in since there are thousands of games and it can be difficult to find something to play. Some things we learned how to do were deploy an application to heroku, retrieve data through GET and POST routes, and use MYSQL for the database.
+Welcome to Quarter Arcade! This is a full-stack application that lets you search for game titles that are pulled from an api. We wanted to make a website that makes it easier to learn about games from different genres that a user may be interested in since there are thousands of games and it can be difficult to find something to play. Some things we learned how to do were deploy an application to heroku, retrieve data through GET and POST routes, and use MYSQL for the database.
 
 
 ## Table of Contents
@@ -25,11 +25,9 @@ In the browser url type localhost:3001
 
 ## Usage
 
-Create an account under the sign up section or log in if you already have an account. Type in the name of a game to see related titles and save those titles so they go to your shopping cart so they can be viewed later.
+Create an account under the sign up section or log in if you already have an account. Type in the name of a game to see related titles and related information about the game.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+![alt text](public/images/WebsiteHome.png)
 
 ## Credits
 
