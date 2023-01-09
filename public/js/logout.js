@@ -6,7 +6,7 @@ const logoutFormHandler = async () => {
     });
   
     if (response.ok) {
-      document.location.replace('/login');
+      document.location.replace('/login-signup');
     } else {
       alert('Failed to log out.');
     }
