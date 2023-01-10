@@ -50,4 +50,4 @@ document
 
 document
   .querySelector('.signup')
-  .addEventListener('submit', signupFormHandler);
+  .addEventListener('click', signupFormHandler);

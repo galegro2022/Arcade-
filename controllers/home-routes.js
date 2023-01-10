@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { User, Games } = require('../models');
 const withAuth = require('../utils/auth');
 
-// TODO: Add a comment describing the functionality of the withAuth middleware
+
+// the withAuth middleware will check if the user is logged in
 router.get('/', withAuth, async (req, res) => {
   try {
     const gameData = await Games.findAll({
@@ -14,7 +15,7 @@ router.get('/', withAuth, async (req, res) => {
     console.log(games)
     res.render('homepage', {
       games,
-      // TODO: Add a comment describing the functionality of this property
+      // if the user is logged in, req.session will contain the user's information
       logged_in: req.session.logged_in,
       user: req.body.username,
     });
@@ -24,7 +25,8 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login-signup', async (req, res) => {
-  // TODO: Add a comment describing the functionality of this if statement
+  // if the user is logged in, redirect to the homepage
+
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
@@ -33,6 +35,7 @@ router.get('/login-signup', async (req, res) => {
   res.render('login-signup');
 });
 
+// if the user is logged in, redirect to the homepage
 
 router.get('/homepage', async (req, res) => {
   if (req.session.loggedIn) {
