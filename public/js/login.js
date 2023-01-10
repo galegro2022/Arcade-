@@ -25,7 +25,7 @@ const signupFormHandler = async (event) => {
   console.log("RUNNING ON LINE 25")
   const username = document.querySelector('#username-input').value.trim();
   const email = document.querySelector('#signup-email').value.trim();
-  const password = document.querySelector('#password-input').value.trim();
+  const password = document.querySelector('#signup-password-input').value.trim();
 
   console.log(username, email, password, "HERE");
 
